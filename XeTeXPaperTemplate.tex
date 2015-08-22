@@ -1,0 +1,129 @@
+\documentclass[12pt,letterpaper,oneside]{article}
+
+%%% LOAD AND SETUP PACKAGES
+
+\usepackage{fullpage}
+\usepackage{expex}
+\usepackage{verse}
+\usepackage{tipa}
+\usepackage{tikz}
+\usepackage{fixltx2e}
+\usepackage{amssymb}
+\usepackage[russian,english]{babel}
+\usepackage{fontspec}
+\setmainfont[
+ Path=fonts/,
+ Ligatures=TeX,
+ BoldFont={MinionPro-Bold.otf},
+ ItalicFont={MinionPro-It.otf},
+ BoldItalicFont={MinionPro-BoldIt.otf}
+ ]{MinionPro-Regular.otf}
+%%%%%%%%
+\newfontfamily\ocs{BukyVede-Regular.ttf}
+
+
+\usepackage{lsalike}
+
+\usepackage{microtype} % Slightly tweaks character and word spacings
+                       % for better typography
+
+%\usepackage{parskip}
+\usepackage{setspace}
+%\doublespacing
+
+\usepackage[bottom]{footmisc}
+\usepackage{booktabs}
+\usepackage{tipa}
+\usepackage{expex}
+\usepackage{color}
+\usepackage{colortbl}
+\definecolor{KUBlue}{RGB}{0,34,180}
+\definecolor{KUCrimson}{RGB}{232,0,13}
+\usepackage[%backref=page,
+		colorlinks,
+		breaklinks,
+		linkcolor=KUCrimson,
+		urlcolor=KUCrimson,
+		citecolor=KUCrimson,
+		filecolor=KUBlue,
+		pdftex,
+		hyperfootnotes=true,
+		pdfpagelabels]{hyperref}
+
+%%%%% DECLARATIVE FORMATTING COMMANDS
+
+\newcommand{\russ}[1]{{\em #1}}                % RUSSIAN TEXT
+\newcommand{\oodh}[1]{{\em #1}}                % O'ODHAM TEXT
+\newcommand{\trans}[1]{{\it \textipa{#1}}}     % TRANSLITERATION
+\newcommand{\engl}[1]{'#1'}                    % ENGLISH TRANSLATION
+\newcommand{\quot}[1]{''#1''}                  % QUOTATION
+\newcommand{\pquot}[1]{„#1”}                   % POLISH QUOTATION
+%\newcommand{\pquot}[1]{»#1«}                  % POLISH QUOTATION
+\newcommand{\abr}[1]{\textsc{#1}}              % ABBREVIATION
+\newcommand{\und}[1]{\underline{#1}}           % UNDERLINE
+
+\newcommand{\ocst}[1]{{\ocs #1}} % OCS TEXT
+
+\newcommand{\no}[1]{{\color{KUBlue} #1}}       % NOTE
+
+\newcommand{\pf}[0]{\textsuperscript{\abr{pf}}}   % PERFECTIVE
+\newcommand{\ipf}[0]{\textsuperscript{\abr{ipf}}} % IMPERFECTIVE
+
+\newcommand{\tdg}[1]{\textdoublegrave{#1}} % DOUBLE GRAVE ACCENT
+
+\let\emptyset\varnothing
+\newcommand{\zero}[0]{$\emptyset$} % ZERO GRADE SYMBOL
+
+\newenvironment{blargh}[0]%{}{}% I'M TOO LAZY TO COMMENT OUT THE DOUBLESPACING
+{\begin{spacing}{1.15}}{\end{spacing}}
+
+\newcommand{\sq}[0]{\ensuremath{\sim}} % SQUIGGLE
+
+\renewcommand{\k}[1]{\textpolhook{#1}} % DANGLE
+
+\makeatletter
+\newenvironment{fullwidth}% ESCAPE TO PAGEWIDTH IN A LIST
+    {\par
+     \setlength{\@totalleftmargin}{0pt}%
+     \setlength{\linewidth}{\hsize}%
+     \list{}{\setlength{\leftmargin}{0pt}}
+     \item\relax}
+    {\endlist}
+\makeatother
+
+\newcommand{\ans}[1]{% MY ANSWERS
+\begin{fullwidth}%
+{\color{KUBlue}%
+{\em #1}%
+}%
+\end{fullwidth}%
+}
+
+\title{}
+\author{Matt Menzenski}
+\date{}
+
+\begin{document}
+
+\begin{blargh}
+
+\maketitle
+
+\section{Introduction}
+
+\section{Prior Literature}
+
+\section{Methodology}
+
+\section{Analysis}
+
+\section{Conclusions}
+
+%%%% BIBLIOGRAPHY
+%\clearpage
+\bibliography{masterslavicbibliography}
+\bibliographystyle{lsalike}
+
+\end{blargh}
+
+\end{document}
